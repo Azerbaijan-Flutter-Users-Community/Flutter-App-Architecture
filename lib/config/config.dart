@@ -4,4 +4,5 @@ class Configurations {
   Configurations._();
 
   static final bool loggingEnabled = kDebugMode;
+  static final bool blocObserverEnabled = kDebugMode;
 }
