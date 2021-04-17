@@ -2,7 +2,6 @@
 ![Codecov](https://img.shields.io/codecov/c/github/Azerbaijan-Flutter-Users-Community/Flutter-App-Architecture)
 ![GitHub Repo stars](https://img.shields.io/github/stars/yusubx/Flutter-App-Architecture)
 ![GitHub watchers](https://img.shields.io/github/watchers/yusubx/Flutter-App-Architecture)
-
 ![GitHub top language](https://img.shields.io/github/languages/top/yusubx/Flutter-App-Architecture)
 ![GitHub issues](https://img.shields.io/github/issues/yusubx/Flutter-App-Architecture)
 ![GitHub issues](https://img.shields.io/github/issues-raw/yusubx/Flutter-App-Architecture)
