@@ -1,16 +1,18 @@
-# architecture_example
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/yusubx/Flutter-App-Architecture/Coverage/master)
+![Codecov branch](https://img.shields.io/codecov/c/github/yusubx/Flutter-App-Architecture/master)
+![GitHub Repo stars](https://img.shields.io/github/stars/yusubx/Flutter-App-Architecture)
+![GitHub watchers](https://img.shields.io/github/watchers/yusubx/Flutter-App-Architecture)
 
-A new Flutter project.
+![GitHub top language](https://img.shields.io/github/languages/top/yusubx/Flutter-App-Architecture)
+![GitHub issues](https://img.shields.io/github/issues/yusubx/Flutter-App-Architecture)
+![GitHub issues](https://img.shields.io/github/issues-raw/yusubx/Flutter-App-Architecture)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/yusubx/Flutter-App-Architecture)
+![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/yusubx/Flutter-App-Architecture)
 
-## Getting Started
+# Flutter App Architecture Example
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+----
+### Maintainers
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[Kanan Yusubov](https://www.github.com/yusubx)
