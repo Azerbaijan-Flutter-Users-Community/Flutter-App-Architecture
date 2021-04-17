@@ -4,8 +4,8 @@ void main() {
   test(
     'sum test',
     () {
-      int a = 5 + 4;
-      expect(a, 9);
+      int a = 5 + 5;
+      expect(a, 10);
     },
   );
 }
