@@ -1,11 +1,13 @@
+import 'package:architecture_example/presentation/app.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  test(
-    'sum test',
-    () {
-      int a = 5 + 5;
-      expect(a, 10);
-    },
-  );
+  testWidgets('Simple Test', (tester) async {
+    await tester.pumpWidget(App());
+    await tester.pumpAndSettle();
+
+    final appbarFinder = find.byType(AppBar);
+    expect(appbarFinder, findsOneWidget);
+  });
 }
