@@ -16,7 +16,6 @@ dependencies:
   hive: ^2.0.3
   hive_flutter: ^1.0.0
   flutter_bloc: ^7.0.0
-  connectivity: ^3.0.3
   logging: ^1.0.1
   ansicolor: ^2.0.1
   intl: ^0.17.0
