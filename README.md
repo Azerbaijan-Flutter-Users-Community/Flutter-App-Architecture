@@ -3,7 +3,7 @@
 <img alt="GitHub Workflow Status (branch)" src="https://img.shields.io/github/workflow/status/yusubx/Flutter-App-Architecture/Coverage/master">
 </a>
 
-<a href="https://github.com/Azerbaijan-Flutter-Users-Community/Flutter-App-Architecture/actions">
+<a href="https://app.codecov.io/gh/Azerbaijan-Flutter-Users-Community/Flutter-App-Architecture">
 <img alt="Codecov" src="https://img.shields.io/codecov/c/github/Azerbaijan-Flutter-Users-Community/Flutter-App-Architecture">
 </a>
 
