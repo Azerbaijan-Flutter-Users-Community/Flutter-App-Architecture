@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/app_bloc_observer.dart';
 import '../services/logging_service.dart';
+import '../services/preferences_service.dart';
 import 'config.dart';
 
 Future<void> init() async {
@@ -15,4 +16,6 @@ Future<void> init() async {
   if (Configurations.blocObserverEnabled) {
     Bloc.observer = AppBlocObserver();
   }
+
+  await PreferencesService.init();
 }

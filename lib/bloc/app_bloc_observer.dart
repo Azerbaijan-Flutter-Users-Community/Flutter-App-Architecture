@@ -10,21 +10,23 @@ class AppBlocObserver implements BlocObserver {
   }
 
   @override
-  void onEvent(Bloc bloc, Object? event) {}
+  void onEvent(Bloc bloc, Object? event) {
+    _logger.info('${bloc.runtimeType} => $event');
+  }
 
   @override
   void onChange(BlocBase bloc, Change change) {
-    _logger.info('$bloc => $change');
+    _logger.info('${bloc.runtimeType} => $change');
   }
 
   @override
   void onTransition(Bloc bloc, Transition transition) {
-    _logger.info('$bloc => $transition');
+    _logger.info('${bloc.runtimeType} => $transition');
   }
 
   @override
   void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
-    _logger.severe('$bloc => $error, $stackTrace');
+    _logger.severe('${bloc.runtimeType} => $error, $stackTrace');
   }
 
   @override
