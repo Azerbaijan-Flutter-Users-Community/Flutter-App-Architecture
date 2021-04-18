@@ -1,12 +1,17 @@
-![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/yusubx/Flutter-App-Architecture/Coverage/master)
-![Codecov](https://img.shields.io/codecov/c/github/Azerbaijan-Flutter-Users-Community/Flutter-App-Architecture)
-![GitHub Repo stars](https://img.shields.io/github/stars/yusubx/Flutter-App-Architecture)
-![GitHub watchers](https://img.shields.io/github/watchers/yusubx/Flutter-App-Architecture)
-![GitHub top language](https://img.shields.io/github/languages/top/yusubx/Flutter-App-Architecture)
-![GitHub issues](https://img.shields.io/github/issues/yusubx/Flutter-App-Architecture)
-![GitHub issues](https://img.shields.io/github/issues-raw/yusubx/Flutter-App-Architecture)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/yusubx/Flutter-App-Architecture)
-![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/yusubx/Flutter-App-Architecture)
+<p align="center">
+<a href="https://github.com/Azerbaijan-Flutter-Users-Community/Flutter-App-Architecture/actions">
+<img alt="GitHub Workflow Status (branch)" src="https://img.shields.io/github/workflow/status/yusubx/Flutter-App-Architecture/Coverage/master">
+</a>
+
+<a href="https://github.com/Azerbaijan-Flutter-Users-Community/Flutter-App-Architecture/actions">
+<img alt="Codecov" src="https://img.shields.io/codecov/c/github/Azerbaijan-Flutter-Users-Community/Flutter-App-Architecture">
+</a>
+
+<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Azerbaijan-Flutter-Users-Community/Flutter-App-Architecture?style=social">
+
+<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Azerbaijan-Flutter-Users-Community/Flutter-App-Architecture">
+</p>
+
 
 # Flutter App Architecture Example
 This is the simple Todo example that is used to use good app structure.
