@@ -7,14 +7,16 @@
 <img alt="Codecov" src="https://img.shields.io/codecov/c/github/Azerbaijan-Flutter-Users-Community/Flutter-App-Architecture">
 </a>
 
-<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Azerbaijan-Flutter-Users-Community/Flutter-App-Architecture?style=social">
+<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Azerbaijan-Flutter-Users-Community/Flutter-App-Architecture?style=flat">
 
 <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Azerbaijan-Flutter-Users-Community/Flutter-App-Architecture">
+
+<center>
+<h1 align="center">Flutter App Architecture Example</h1>
+</center>
 </p>
 
-
-# Flutter App Architecture Example
-This is the simple Todo example that is used to use good app structure.
+The app includes some approach to structure Flutter Apps more clear.
 
 
 ----
