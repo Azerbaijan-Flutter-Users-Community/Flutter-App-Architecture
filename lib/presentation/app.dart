@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:logging/logging.dart';
 
 import '../bloc/theme/theme_cubit.dart';
 import 'values/app_themes.dart';
+import 'values/supported_locales.dart';
 
 class App extends StatelessWidget {
   @override
@@ -15,6 +18,13 @@ class App extends StatelessWidget {
       themeMode: themeMode,
       theme: AppThemes.lightTheme,
       darkTheme: AppThemes.darkTheme,
+      supportedLocales: supportedLocales,
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        AppLocalizations.delegate,
+      ],
       home: Navigator(
         pages: [
           MaterialPage(child: DemoPage()),
@@ -60,7 +70,7 @@ class _DemoPageState extends State<DemoPage> {
       ),
       body: Center(
         child: Text(
-          'Welcome To\nStarter Architecture Example',
+          AppLocalizations.of(context)!.hi,
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.headline6,
         ),
