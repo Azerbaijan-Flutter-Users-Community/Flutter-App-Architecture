@@ -10,7 +10,9 @@ class AppBlocObserver implements BlocObserver {
   }
 
   @override
-  void onEvent(Bloc bloc, Object? event) {}
+  void onEvent(Bloc bloc, Object? event) {
+    _logger.info('$bloc => $event');
+  }
 
   @override
   void onChange(BlocBase bloc, Change change) {
