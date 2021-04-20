@@ -3,9 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../contractors/impl_preferences_service.dart';
+import '../contractors/base_preferences_service.dart';
 
-class PreferencesService implements ImplPreferencesService {
+class PreferencesService implements BasePreferencesService {
   PreferencesService._();
 
   static PreferencesService? _instance;

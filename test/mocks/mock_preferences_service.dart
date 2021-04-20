@@ -1,9 +1,9 @@
-import 'package:architecture_example/contractors/impl_preferences_service.dart';
+import 'package:architecture_example/contractors/base_preferences_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/material/app.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class MockPreferencesService implements ImplPreferencesService {
+class MockPreferencesService implements BasePreferencesService {
   final _values = <String, Object>{};
 
   @visibleForTesting

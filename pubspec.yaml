@@ -13,21 +13,21 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  hive: ^2.0.3
-  hive_flutter: ^1.0.0
   flutter_bloc: ^7.0.0
   logging: ^1.0.1
   ansicolor: ^2.0.1
   intl: ^0.17.0
   shared_preferences: ^2.0.5
+  retrofit: ^2.0.0-beta1
+  equatable: ^2.0.0
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  hive_generator: ^1.0.1
   bloc_test: ^8.0.0
   build_runner: ^1.12.2
+  retrofit_generator: ^2.0.0-beta3
 
 
 flutter:
