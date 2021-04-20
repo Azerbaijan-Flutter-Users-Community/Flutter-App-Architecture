@@ -5,6 +5,7 @@ import 'bloc/language/language_cubit.dart';
 import 'bloc/theme/theme_cubit.dart';
 import 'config/init.dart';
 import 'presentation/app.dart';
+import 'services/preferences_service.dart';
 
 void main() async {
   await init();
@@ -13,10 +14,10 @@ void main() async {
     MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (_) => ThemeCubit(ThemeMode.system),
+          create: (_) => ThemeCubit(PreferencesService.instance),
         ),
         BlocProvider(
-          create: (_) => LanguageCubit(Locale('en', 'US')),
+          create: (_) => LanguageCubit(PreferencesService.instance),
         ),
       ],
       child: App(),

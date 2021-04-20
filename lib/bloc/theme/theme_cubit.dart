@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../services/preferences_service.dart';
+import '../../contractors/impl_preferences_service.dart';
 
 class ThemeCubit extends Cubit<ThemeMode> {
-  ThemeCubit(ThemeMode initialThemeMode) : super(initialThemeMode) {
-    emit(PreferencesService.instance.themeMode ?? initialThemeMode);
+  ThemeCubit(this.preferencesService) : super(ThemeMode.system) {
+    emit(preferencesService.themeMode ?? ThemeMode.system);
   }
+
+  ImplPreferencesService preferencesService;
 
   void changeTheme(ThemeMode themeMode) async {
     if (state == themeMode) {
       return;
     }
 
-    await PreferencesService.instance.changeThemeMode(themeMode);
+    await preferencesService.changeThemeMode(themeMode);
     emit(themeMode);
   }
 }
