@@ -3,7 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class PreferencesService {
+import '../contractors/impl_preferences_service.dart';
+
+class PreferencesService implements ImplPreferencesService {
   PreferencesService._();
 
   static PreferencesService? _instance;
@@ -26,10 +28,12 @@ class PreferencesService {
   final _languageCodeKey = 'languageCode';
   final _countryCodeKey = 'countryCode';
 
+  @override
   Future<void> changeThemeMode(ThemeMode themeMode) async {
     _sharedPreferences?.setInt(_themeModeKey, themeMode.index);
   }
 
+  @override
   ThemeMode? get themeMode {
     final index = _sharedPreferences?.getInt(_themeModeKey);
 
@@ -40,11 +44,13 @@ class PreferencesService {
     return null;
   }
 
+  @override
   Future<void> changeLocale(Locale locale) async {
     _sharedPreferences?.setString(_languageCodeKey, locale.languageCode);
     _sharedPreferences?.setString(_countryCodeKey, locale.countryCode ?? '');
   }
 
+  @override
   Locale? get locale {
     final languageCode = _sharedPreferences?.getString(_languageCodeKey);
     final countryCode = _sharedPreferences?.getString(_countryCodeKey);

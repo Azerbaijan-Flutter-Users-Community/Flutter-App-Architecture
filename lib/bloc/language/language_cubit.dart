@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../services/preferences_service.dart';
+import '../../contractors/impl_preferences_service.dart';
 
 class LanguageCubit extends Cubit<Locale> {
-  LanguageCubit(Locale initialLocale) : super(initialLocale) {
-    final locale = PreferencesService.instance.locale;
-    emit(locale ?? initialLocale);
+  LanguageCubit(this.preferencesService) : super(Locale('en', 'US')) {
+    final locale = preferencesService.locale;
+    emit(locale ?? Locale('en', 'US'));
   }
+
+  final ImplPreferencesService preferencesService;
 
   void changeLocale(Locale locale) async {
     if (state == locale) {
       return;
     }
 
-    await PreferencesService.instance.changeLocale(locale);
+    await preferencesService.changeLocale(locale);
     emit(locale);
   }
 }
