@@ -21,7 +21,7 @@ jobs:
       - run: flutter test --coverage
 
   build_android_apk:
-    name: Build Flutter (Anroid APK)
+    name: Build Flutter (Android APK)
     needs: [flutter_test]
     runs-on: ubuntu-latest
     steps:
@@ -42,7 +42,7 @@ jobs:
           path: build/app/outputs/apk/release/app-release.apk
 
   build_android_appbundle:
-    name: Build Flutter (Anroid AppBundle)
+    name: Build Flutter (Android AppBundle)
     needs: [flutter_test]
     runs-on: ubuntu-latest
     steps:
