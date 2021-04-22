@@ -1,16 +1,25 @@
-# architecture_example
+<p align="center">
+<a href="https://github.com/Azerbaijan-Flutter-Users-Community/Flutter-App-Architecture/actions">
+<img alt="GitHub Workflow Status (branch)" src="https://img.shields.io/github/workflow/status/yusubx/Flutter-App-Architecture/Coverage/master">
+</a>
 
-A new Flutter project.
+<a href="https://app.codecov.io/gh/Azerbaijan-Flutter-Users-Community/Flutter-App-Architecture">
+<img alt="Codecov" src="https://img.shields.io/codecov/c/github/Azerbaijan-Flutter-Users-Community/Flutter-App-Architecture">
+</a>
 
-## Getting Started
+<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Azerbaijan-Flutter-Users-Community/Flutter-App-Architecture?style=flat">
 
-This project is a starting point for a Flutter application.
+<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Azerbaijan-Flutter-Users-Community/Flutter-App-Architecture">
 
-A few resources to get you started if this is your first Flutter project:
+<center>
+<h1 align="center">Flutter App Architecture Example</h1>
+</center>
+</p>
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+The app includes some approach to structure Flutter Apps more clear.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+----
+### Maintainers
+
+[Kanan Yusubov](https://www.github.com/yusubx)
