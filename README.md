@@ -1,6 +1,6 @@
 <p align="center">
 <a href="https://github.com/Azerbaijan-Flutter-Users-Community/Flutter-App-Architecture/actions">
-<img alt="GitHub Workflow Status (branch)" src="https://img.shields.io/github/workflow/status/yusubx/Flutter-App-Architecture/Coverage/master">
+<img alt="GitHub Workflow Status (branch)" src="https://img.shields.io/github/workflow/status/yusubx/Flutter-App-Architecture/CI/master">
 </a>
 
 <a href="https://app.codecov.io/gh/Azerbaijan-Flutter-Users-Community/Flutter-App-Architecture">
