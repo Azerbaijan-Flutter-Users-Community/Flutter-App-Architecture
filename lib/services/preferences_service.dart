@@ -18,7 +18,7 @@ class PreferencesService implements ImplPreferencesService {
       try {
         _instance = PreferencesService._();
         _instance?._sharedPreferences = await SharedPreferences.getInstance();
-      } on Exception catch (e) {
+      } on Exception catch (_) {
         // TODO: Something
       }
     }
