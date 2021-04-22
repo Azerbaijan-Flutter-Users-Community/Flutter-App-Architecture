@@ -22,10 +22,6 @@ jobs:
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test --coverage
-      - uses: codecov/codecov-action@v1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          file: coverage/lcov.info
 
   build_android_apk:
     name: Build Flutter (Anroid APK)
@@ -68,6 +64,16 @@ jobs:
         with:
           name: release-appbundle
           path: build/app/outputs/bundle/release/app-release.aab
+  
+  deploy_to_codecov:
+    name: Deploy coverage to Codecov
+    needs: [flutter_test]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: coverage/lcov.info
 
 #  build_ios:
 #    name: Build Flutter (iOS)
