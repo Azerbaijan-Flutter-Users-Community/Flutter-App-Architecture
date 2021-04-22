@@ -65,22 +65,31 @@ jobs:
           name: release-apk
           path: build/app/outputs/bundle/release/app-release.aab
 
-  build_ios:
-    name: Build Flutter (iOS)
-    needs: [flutter_test]
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-java@v1
-        with:
-          java-version: "12.x"
-      - uses: subosito/flutter-action@v1.4.0
-        with:
-          channel: stable
-      - run: flutter pub get
-      - run: flutter clean
-      - run: flutter build ios
+#  build_ios:
+#    name: Build Flutter (iOS)
+#    needs: [flutter_test]
+#    runs-on: macos-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#      - uses: actions/setup-java@v1
+#        with:
+#          java-version: "12.x"
+#      - uses: subosito/flutter-action@v1.4.0
+#        with:
+#          channel: stable
+#      - run: flutter pub get
+#      - run: flutter clean
+#      - run: flutter build ios
 
+  upload_to_codecov:
+    name: Upload coverage to Codecov
+    needs: [flutter_test]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: codecov/codecov-action@v1 
+      with:
+        token: ${{secrets.CODECOV_TOKEN}}  
+        file: coverage/lcov.info
 
 
 
