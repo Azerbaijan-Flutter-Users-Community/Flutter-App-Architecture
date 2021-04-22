@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../bloc/post/post_cubit.dart';
+import '../../../utils/extensions/waitable_cubit_ext.dart';
 import 'widgets/home_bottom_bar.dart';
 import 'widgets/post_item.dart';
-import '../../../bloc/post/post_cubit.dart';
 
 class PostsPage extends StatelessWidget {
   @override
@@ -25,38 +27,48 @@ class PostsPage extends StatelessWidget {
                   ),
                 ],
               ),
-              BlocBuilder<PostCubit, DataState<List<Post>>>(
-                builder: (_, state) {
-                  if (state.isInProgress) {
-                    return SliverFillRemaining(
-                      child: Center(
-                        child: CircularProgressIndicator(),
-                      ),
-                    );
-                  }
+              SliverFillRemaining(
+                child: RefreshIndicator(
+                  onRefresh: () {
+                    context.read<PostCubit>().fetch();
+                    return context
+                        .read<PostCubit>()
+                        .waitFor<DataState<List<Post>>>(
+                          predicate: (state) => state.isSuccess,
+                        );
+                  },
+                  child: BlocBuilder<PostCubit, DataState<List<Post>>>(
+                    builder: (_, state) {
+                      if (state.isInProgress) {
+                        return Center(
+                            child: CircularProgressIndicator(),
+                        );
+                      }
 
-                  if (state.isSuccess) {
-                    final posts = state.data!..shuffle();
+                      if (state.isSuccess) {
+                        final posts = state.data!..shuffle();
 
-                    return SliverList(
-                      delegate: SliverChildBuilderDelegate(
-                        (_, i) {
-                          final post = posts[i];
-                          return PostItem(post: post);
-                        },
-                        childCount: state.data!.length,
-                      ),
-                    );
-                  }
+                        return ListView.builder(
+                          itemBuilder: (_, i) {
+                            final post = posts[i];
+                            return PostItem(post: post);
+                          },
+                          itemCount: posts.length,
+                        );
+                      }
 
-                  if (state.isFailure) {
-                    return SliverFillRemaining(
-                      child: Text('Error occured!'),
-                    );
-                  }
+                      if (state.isFailure) {
+                        return Text('Error occurred!');
+                      }
 
-                  return SliverToBoxAdapter(child: SizedBox());
-                },
+                      return Expanded(
+                        child: Container(
+                          color: Colors.white,
+                        ),
+                      );
+                    },
+                  ),
+                ),
               ),
             ],
           ),
