@@ -41,7 +41,7 @@ class PostsPage extends StatelessWidget {
                     builder: (_, state) {
                       if (state.isInProgress) {
                         return Center(
-                            child: CircularProgressIndicator(),
+                          child: CircularProgressIndicator(),
                         );
                       }
 
