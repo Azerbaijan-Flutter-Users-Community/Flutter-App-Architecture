@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../../data/models/post.dart';
+import 'action_button.dart';
 
 final avatarColors = <int, Color>{
   1: Colors.red,
@@ -27,8 +28,23 @@ class PostItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(8.0),
-      margin: const EdgeInsets.only(bottom: 8.0),
-      color: Colors.white,
+      margin: const EdgeInsets.only(
+        bottom: 8.0,
+        left: 8.0,
+        right: 8.0,
+      ),
+      decoration: BoxDecoration(
+        color: Theme.of(context).cardColor,
+        borderRadius: BorderRadius.circular(8.0),
+        boxShadow: [
+          BoxShadow(
+            color: Theme.of(context).primaryColor.withOpacity(0.2),
+            offset: Offset(0.0, 3.0),
+            blurRadius: 3.0,
+            spreadRadius: 2.0,
+          ),
+        ],
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -47,23 +63,19 @@ class PostItem extends StatelessWidget {
             textAlign: TextAlign.justify,
           ),
           const SizedBox(height: 10),
-          Container(
-            decoration: BoxDecoration(
-              border: Border(top: BorderSide(width: 0.2)),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                IconButton(
-                  icon: Icon(CupertinoIcons.hand_thumbsup),
-                  onPressed: () {},
-                ),
-                IconButton(
-                  icon: Icon(CupertinoIcons.bubble_left),
-                  onPressed: () {},
-                ),
-              ],
-            ),
+          Divider(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              ActionButton(
+                icon: CupertinoIcons.hand_thumbsup,
+                onTap: () {},
+              ),
+              ActionButton(
+                icon: CupertinoIcons.bubble_left,
+                onTap: () {},
+              ),
+            ],
           ),
         ],
       ),

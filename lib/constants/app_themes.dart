@@ -10,13 +10,22 @@ abstract class AppThemes {
     primaryColor: AppColors.primaryColor,
     primaryColorLight: AppColors.primaryColorLight,
     primaryColorDark: AppColors.primaryColorDark,
-    scaffoldBackgroundColor: AppColors.scaffoldColor,
+    cardColor: AppColors.postItemBackgroundColor,
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      selectedItemColor: AppColors.primaryColor,
+    ),
   );
 
   static final darkTheme = ThemeData(
     brightness: Brightness.dark,
     primaryColor: AppColors.darkPrimaryColor,
     primaryColorLight: AppColors.darkPrimaryColorLight,
-    scaffoldBackgroundColor: AppColors.darkScaffoldColor,
+    cardColor: AppColors.darkPostItemBackgroundColor,
+    dividerColor: AppColors.postItemBackgroundColor,
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: AppColors.darkPostItemBackgroundColor,
+      selectedItemColor: AppColors.primaryColor,
+      elevation: 8.0,
+    ),
   );
 }

@@ -1,3 +1,4 @@
+import 'package:architecture_example/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,9 +11,13 @@ import 'widgets/post_item.dart';
 class PostsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final mainColor = Theme.of(context).brightness == Brightness.dark
+        ? Theme.of(context).cardColor
+        : Theme.of(context).primaryColorDark;
+
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
-        statusBarColor: Theme.of(context).primaryColorDark,
+        statusBarColor: mainColor,
       ),
       child: Scaffold(
         body: SafeArea(
@@ -20,6 +25,7 @@ class PostsPage extends StatelessWidget {
             slivers: [
               SliverAppBar(
                 title: Text('Posts'),
+                backgroundColor: mainColor,
                 actions: [
                   IconButton(
                     icon: Icon(Icons.more_vert),
@@ -49,6 +55,7 @@ class PostsPage extends StatelessWidget {
                         final posts = state.data!..shuffle();
 
                         return ListView.builder(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
                           itemBuilder: (_, i) {
                             final post = posts[i];
                             return PostItem(post: post);

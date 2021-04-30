@@ -11,6 +11,6 @@ abstract class AppColors {
 
   static const primaryColorDark = Colors.deepPurple;
 
-  static const scaffoldColor = Colors.grey;
-  static const darkScaffoldColor = Colors.black;
+  static const postItemBackgroundColor = Colors.white;
+  static const darkPostItemBackgroundColor = Colors.black54;
 }
