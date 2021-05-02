@@ -10,6 +10,7 @@ import 'constants/app_themes.dart';
 import 'constants/supported_locales.dart';
 import 'data/repositories/post_repository.dart';
 import 'presentation/pages/posts/posts_page.dart';
+import 'presentation/router/router_controller.dart';
 
 class App extends StatelessWidget {
   @override
@@ -53,6 +54,7 @@ class App extends StatelessWidget {
           return false;
         },
       ),
+      onGenerateRoute: RouteController.onGenerateRoute,
     );
   }
 }

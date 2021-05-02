@@ -35,7 +35,7 @@ class PostItem extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         color: Theme.of(context).cardColor,
-        borderRadius: BorderRadius.circular(8.0),
+        borderRadius: BorderRadius.circular(4.0),
         boxShadow: [
           BoxShadow(
             color: Theme.of(context).primaryColor.withOpacity(0.2),
