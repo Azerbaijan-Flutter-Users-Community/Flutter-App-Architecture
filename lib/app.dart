@@ -1,16 +1,14 @@
+import 'package:architecture_example/presentation/router/app_route_delegate.dart';
+import 'package:architecture_example/presentation/router/app_route_information_parser.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'bloc/language/language_cubit.dart';
-import 'bloc/post/post_cubit.dart';
 import 'bloc/theme/theme_cubit.dart';
 import 'constants/app_themes.dart';
 import 'constants/supported_locales.dart';
-import 'data/repositories/post_repository.dart';
-import 'presentation/pages/posts/posts_page.dart';
-import 'presentation/router/router_controller.dart';
 
 class App extends StatelessWidget {
   @override
@@ -18,7 +16,9 @@ class App extends StatelessWidget {
     final themeMode = context.watch<ThemeCubit>().state;
     final locale = context.watch<LanguageCubit>().state;
 
-    return MaterialApp(
+    return MaterialApp.router(
+      routerDelegate: AppRouteDelegate(),
+      routeInformationParser: AppRouteInformationParser(),
       title: 'Placeholder Title',
       debugShowCheckedModeBanner: false,
       themeMode: themeMode,
@@ -32,29 +32,6 @@ class App extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
         AppLocalizations.delegate,
       ],
-      home: Navigator(
-        pages: [
-          MaterialPage(
-            child: RepositoryProvider(
-              create: (_) => PostRepository(),
-              child: BlocProvider(
-                create: (ctx) => PostCubit(
-                  ctx.read<PostRepository>(),
-                )..fetch(),
-                child: PostsPage(),
-              ),
-            ),
-          ),
-        ],
-        onPopPage: (route, result) {
-          if (route.didPop(result)) {
-            return true;
-          }
-
-          return false;
-        },
-      ),
-      onGenerateRoute: RouteController.onGenerateRoute,
     );
   }
 }

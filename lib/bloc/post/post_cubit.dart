@@ -13,5 +13,17 @@ class PostCubit extends DataCubit<List<Post>> {
   final BasePostRepository postRepository;
 
   @override
-  FutureOr<List<Post>> loadData() => postRepository.getPosts();
+  FutureOr<List<Post>> loadData() async {
+    final posts = await postRepository.getPosts();
+
+    return posts
+        .map<Post>(
+          (post) => post
+            ..body = post.body.replaceAll(
+              '\n',
+              ' ',
+            ),
+        )
+        .toList();
+  }
 }

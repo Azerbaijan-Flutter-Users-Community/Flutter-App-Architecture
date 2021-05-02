@@ -6,6 +6,7 @@ import '../../../bloc/post/post_cubit.dart';
 import '../../../utils/extensions/waitable_cubit_ext.dart';
 import 'widgets/home_bottom_bar.dart';
 import 'widgets/post_item.dart';
+import 'widgets/more_menu.dart';
 
 class PostsPage extends StatelessWidget {
   @override
@@ -25,12 +26,7 @@ class PostsPage extends StatelessWidget {
               SliverAppBar(
                 title: Text('Posts'),
                 backgroundColor: mainColor,
-                actions: [
-                  IconButton(
-                    icon: Icon(Icons.more_vert),
-                    onPressed: () {},
-                  ),
-                ],
+                actions: [MoreMenu()],
               ),
               SliverFillRemaining(
                 child: RefreshIndicator(
