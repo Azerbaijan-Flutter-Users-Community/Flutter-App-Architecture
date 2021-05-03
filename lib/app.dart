@@ -1,5 +1,3 @@
-import 'package:architecture_example/presentation/router/app_route_delegate.dart';
-import 'package:architecture_example/presentation/router/app_route_information_parser.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -9,6 +7,8 @@ import 'bloc/language/language_cubit.dart';
 import 'bloc/theme/theme_cubit.dart';
 import 'constants/app_themes.dart';
 import 'constants/supported_locales.dart';
+import 'presentation/pages/splash/splash_page.dart';
+import 'presentation/router/route_controller.dart';
 
 class App extends StatelessWidget {
   @override
@@ -16,9 +16,7 @@ class App extends StatelessWidget {
     final themeMode = context.watch<ThemeCubit>().state;
     final locale = context.watch<LanguageCubit>().state;
 
-    return MaterialApp.router(
-      routerDelegate: AppRouteDelegate(),
-      routeInformationParser: AppRouteInformationParser(),
+    return MaterialApp(
       title: 'Placeholder Title',
       debugShowCheckedModeBanner: false,
       themeMode: themeMode,
@@ -26,12 +24,14 @@ class App extends StatelessWidget {
       darkTheme: AppThemes.darkTheme,
       locale: locale,
       supportedLocales: supportedLocales,
+      home: SplashPage(),
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
         AppLocalizations.delegate,
       ],
+      onGenerateRoute: RouteController.onGenerateRoute,
     );
   }
 }

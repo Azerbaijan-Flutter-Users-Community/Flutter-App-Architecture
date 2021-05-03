@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../bloc/post/post_cubit.dart';
 import '../../../utils/extensions/waitable_cubit_ext.dart';
 import 'widgets/home_bottom_bar.dart';
-import 'widgets/post_item.dart';
 import 'widgets/more_menu.dart';
+import 'widgets/post_item.dart';
 
 class PostsPage extends StatelessWidget {
   @override
@@ -24,7 +25,9 @@ class PostsPage extends StatelessWidget {
           child: CustomScrollView(
             slivers: [
               SliverAppBar(
-                title: Text('Posts'),
+                title: Text(
+                  AppLocalizations.of(context)!.posts,
+                ),
                 backgroundColor: mainColor,
                 actions: [MoreMenu()],
               ),
@@ -63,7 +66,7 @@ class PostsPage extends StatelessWidget {
                         return Text('Error occurred!');
                       }
 
-                      return Expanded(
+                      return Center(
                         child: Container(
                           color: Colors.white,
                         ),

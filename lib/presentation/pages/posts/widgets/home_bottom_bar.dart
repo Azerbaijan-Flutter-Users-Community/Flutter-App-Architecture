@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeBottomBar extends StatefulWidget {
   @override
@@ -19,11 +20,11 @@ class _HomeBottomBarState extends State<HomeBottomBar> {
       },
       items: [
         BottomNavigationBarItem(
-          label: 'Posts',
+          label: AppLocalizations.of(context)!.posts,
           icon: Icon(Icons.list_alt),
         ),
         BottomNavigationBarItem(
-          label: 'Profile',
+          label: AppLocalizations.of(context)!.profile,
           icon: Icon(Icons.account_circle_rounded),
         ),
       ],

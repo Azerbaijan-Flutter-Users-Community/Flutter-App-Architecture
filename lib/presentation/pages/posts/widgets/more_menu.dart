@@ -8,7 +8,7 @@ class MoreMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton<String>(
-      color: Theme.of(context).primaryColor,
+      color: Theme.of(context).cardColor,
       onSelected: (String value) {
         print('onSelected: $value');
         if (value == 'Settings') {
@@ -21,7 +21,7 @@ class MoreMenu extends StatelessWidget {
             value: 'Settings',
             child: Text('Settings'),
           ),
-          PopupMenuDivider(),
+          PopupMenuDivider(), 
           PopupMenuItem(
             value: 'About',
             child: Text('About'),

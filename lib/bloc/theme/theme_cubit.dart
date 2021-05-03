@@ -11,6 +11,7 @@ class ThemeCubit extends Cubit<ThemeMode> {
   BasePreferencesService preferencesService;
 
   void changeTheme(ThemeMode themeMode) async {
+    print('themeMode: $themeMode');
     if (state == themeMode) {
       return;
     }
