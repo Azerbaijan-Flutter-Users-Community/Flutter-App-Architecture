@@ -8,6 +8,7 @@ import '../locator.dart';
 import '../services/logging_service.dart';
 import '../services/preferences_service.dart';
 import 'config.dart';
+import '../data/data_providers/comment_data_provider.dart';
 
 Future<void> init() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,4 +30,5 @@ Future<void> _initDataProviders() async {
   final dio = Dio();
 
   locator.register<PostDataProvider>(PostDataProvider(dio));
+  locator.register<CommentDataProvider>(CommentDataProvider(dio));
 }

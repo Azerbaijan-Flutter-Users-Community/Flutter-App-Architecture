@@ -13,13 +13,13 @@ abstract class DataCubit<T> extends Cubit<DataState<T>> {
 
   bool get emitInProgress => true;
 
-  FutureOr<T> loadData();
+  FutureOr<T> loadData([int? id]);
 
-  void fetch() async {
+  void fetch([int? id]) async {
     emit(state.inProgress());
 
     try {
-      final data = await loadData();
+      final data = await loadData(id);
 
       if (data != null) {
         _logger.fine('$data');
