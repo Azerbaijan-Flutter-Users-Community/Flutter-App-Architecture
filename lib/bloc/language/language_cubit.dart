@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../contractors/base_preferences_service.dart';
+import '../../data/contractors/base_preferences_service.dart';
 
 class LanguageCubit extends Cubit<Locale> {
   LanguageCubit(this.preferencesService) : super(Locale('en', 'US')) {

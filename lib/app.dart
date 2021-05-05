@@ -5,10 +5,10 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'bloc/language/language_cubit.dart';
 import 'bloc/theme/theme_cubit.dart';
-import 'constants/app_themes.dart';
-import 'constants/supported_locales.dart';
 import 'presentation/pages/splash/splash_page.dart';
 import 'presentation/router/route_controller.dart';
+import 'utils/constants/app_themes.dart';
+import 'utils/constants/supported_locales.dart';
 
 class App extends StatelessWidget {
   @override

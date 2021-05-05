@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../constants/routes.dart';
+import '../../../../utils/constants/routes.dart';
 
 class MoreMenu extends StatelessWidget {
   const MoreMenu({Key? key}) : super(key: key);
@@ -21,7 +21,7 @@ class MoreMenu extends StatelessWidget {
             value: 'Settings',
             child: Text('Settings'),
           ),
-          PopupMenuDivider(), 
+          PopupMenuDivider(),
           PopupMenuItem(
             value: 'About',
             child: Text('About'),

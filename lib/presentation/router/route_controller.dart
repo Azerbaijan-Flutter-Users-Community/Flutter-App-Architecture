@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../bloc/post/post_cubit.dart';
-import '../../constants/routes.dart';
+import '../../utils/constants/routes.dart';
 import '../../data/repositories/post_repository.dart';
 import '../pages/settings/settings_page.dart';
 import '../pages/posts/posts_page.dart';

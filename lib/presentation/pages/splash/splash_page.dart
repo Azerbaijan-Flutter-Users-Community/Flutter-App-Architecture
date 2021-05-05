@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import '../../../constants/routes.dart';
+import '../../../utils/constants/routes.dart';
 
 class SplashPage extends StatefulWidget {
   @override

@@ -1,4 +1,4 @@
-import 'package:architecture_example/contractors/base_preferences_service.dart';
+import 'package:architecture_example/data/contractors/base_preferences_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/material/app.dart';
 import 'package:shared_preferences/shared_preferences.dart';
