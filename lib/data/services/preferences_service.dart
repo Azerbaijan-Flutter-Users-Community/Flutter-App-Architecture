@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../data/contractors/base_preferences_service.dart';
+import '../contractors/base_preferences_service.dart';
 
 class PreferencesService implements BasePreferencesService {
   PreferencesService._();

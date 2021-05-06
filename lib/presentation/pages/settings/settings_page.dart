@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'widgets/theme_selection.dart';
+import 'package:flutter/services.dart';
+
+import '../../../utils/extensions/theme_ext.dart';
 import 'widgets/language_selection.dart';
+import 'widgets/theme_selection.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
@@ -18,6 +21,12 @@ class _SettingsPageState extends State<SettingsPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Settings'),
+        backwardsCompatibility: false,
+        backgroundColor: Theme.of(context).statusBarColor,
+        brightness: Brightness.light,
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarColor: Theme.of(context).statusBarColor,
+        ),
       ),
       body: SafeArea(
         child: SingleChildScrollView(

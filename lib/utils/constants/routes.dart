@@ -4,6 +4,7 @@ class Routes {
   static const String splash = '/splash';
   static const String signIn = '/signIn';
   static const String posts = '/posts';
+  static const String comments = '/comments';
   static const String settings = '/settings';
   static const String about = '/about';
 }

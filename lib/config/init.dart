@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../bloc/app_bloc_observer.dart';
-import '../data/data_providers/post_data_provider.dart';
-import '../locator.dart';
-import '../services/logging_service.dart';
-import '../services/preferences_service.dart';
-import 'config.dart';
 import '../data/data_providers/comment_data_provider.dart';
+import '../data/data_providers/post_data_provider.dart';
+import '../data/services/logging_service.dart';
+import '../data/services/preferences_service.dart';
+import '../locator.dart';
+import 'config.dart';
 
 Future<void> init() async {
   WidgetsFlutterBinding.ensureInitialized();
