@@ -32,8 +32,8 @@ jobs:
       - uses: subosito/flutter-action@v1.4.0
         with:
           channel: stable
-      - run: flutter pub get
       - run: flutter clean
+      - run: flutter pub get
       - run: flutter build apk --release
       # Upload generated apk to the artifacts.
       - uses: actions/upload-artifact@v1
@@ -53,8 +53,8 @@ jobs:
       - uses: subosito/flutter-action@v1.4.0
         with:
           channel: stable
-      - run: flutter pub get
       - run: flutter clean
+      - run: flutter pub get
       - run: flutter build appbundle
       # Upload generated apk to the artifacts.
       - uses: actions/upload-artifact@v1
@@ -84,6 +84,6 @@ jobs:
 #      - uses: subosito/flutter-action@v1.4.0
 #        with:
 #          channel: stable
-#      - run: flutter pub get
 #      - run: flutter clean
+#      - run: flutter pub get
 #      - run: flutter build ios
