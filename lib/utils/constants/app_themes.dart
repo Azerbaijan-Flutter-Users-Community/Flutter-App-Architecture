@@ -1,3 +1,4 @@
+import 'package:architecture_example/utils/constants/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 import 'app_colors.dart';
@@ -13,6 +14,9 @@ abstract class AppThemes {
     cardColor: AppColors.postItemBackgroundColor,
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       selectedItemColor: AppColors.primaryColor,
+    ),
+    textTheme: TextTheme(
+      bodyText1: AppTextStyles.poppinsw500.copyWith(fontSize: 16),
     ),
   );
 

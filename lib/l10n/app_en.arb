@@ -1,6 +1,6 @@
 {
-  "hi": "Hi!",
-  "@hi": {
-    "description": "The conventional newborn programmer greeting"
-  }
+  "posts": "Posts",
+  "@posts": {},
+  "profile": "Profile",
+  "@profile": {}
 }

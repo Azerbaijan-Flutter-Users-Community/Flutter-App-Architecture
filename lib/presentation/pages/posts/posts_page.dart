@@ -1,36 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../bloc/post/post_cubit.dart';
+import '../../../utils/constants/routes.dart';
+import '../../../utils/extensions/theme_ext.dart';
 import '../../../utils/extensions/waitable_cubit_ext.dart';
+import '../../global/data_item.dart';
 import 'widgets/home_bottom_bar.dart';
-import 'widgets/post_item.dart';
+import 'widgets/more_menu.dart';
 
 class PostsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final mainColor = Theme.of(context).brightness == Brightness.dark
-        ? Theme.of(context).cardColor
-        : Theme.of(context).primaryColorDark;
-
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(
-        statusBarColor: mainColor,
+        statusBarColor: Theme.of(context).statusBarColor,
+        statusBarIconBrightness: Brightness.light,
       ),
       child: Scaffold(
         body: SafeArea(
           child: CustomScrollView(
             slivers: [
               SliverAppBar(
-                title: Text('Posts'),
-                backgroundColor: mainColor,
-                actions: [
-                  IconButton(
-                    icon: Icon(Icons.more_vert),
-                    onPressed: () {},
-                  ),
-                ],
+                title: Text(
+                  AppLocalizations.of(context)!.posts,
+                ),
+                backgroundColor: Theme.of(context).statusBarColor,
+                actions: [MoreMenu()],
               ),
               SliverFillRemaining(
                 child: RefreshIndicator(
@@ -57,7 +55,16 @@ class PostsPage extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(vertical: 8.0),
                           itemBuilder: (_, i) {
                             final post = posts[i];
-                            return PostItem(post: post);
+
+                            return DataItem(
+                              id: post.userId,
+                              body: post.body,
+                              onCommentTap: () => Navigator.pushNamed(
+                                context,
+                                Routes.comments,
+                                arguments: post.id,
+                              ),
+                            );
                           },
                           itemCount: posts.length,
                         );
@@ -67,7 +74,7 @@ class PostsPage extends StatelessWidget {
                         return Text('Error occurred!');
                       }
 
-                      return Expanded(
+                      return Center(
                         child: Container(
                           color: Colors.white,
                         ),

@@ -4,12 +4,11 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'bloc/language/language_cubit.dart';
-import 'bloc/post/post_cubit.dart';
 import 'bloc/theme/theme_cubit.dart';
-import 'constants/app_themes.dart';
-import 'constants/supported_locales.dart';
-import 'data/repositories/post_repository.dart';
-import 'presentation/pages/posts/posts_page.dart';
+import 'presentation/pages/splash/splash_page.dart';
+import 'presentation/router/route_controller.dart';
+import 'utils/constants/app_themes.dart';
+import 'utils/constants/supported_locales.dart';
 
 class App extends StatelessWidget {
   @override
@@ -25,34 +24,14 @@ class App extends StatelessWidget {
       darkTheme: AppThemes.darkTheme,
       locale: locale,
       supportedLocales: supportedLocales,
+      home: SplashPage(),
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
         AppLocalizations.delegate,
       ],
-      home: Navigator(
-        pages: [
-          MaterialPage(
-            child: RepositoryProvider(
-              create: (_) => PostRepository(),
-              child: BlocProvider(
-                create: (ctx) => PostCubit(
-                  ctx.read<PostRepository>(),
-                )..fetch(),
-                child: PostsPage(),
-              ),
-            ),
-          ),
-        ],
-        onPopPage: (route, result) {
-          if (route.didPop(result)) {
-            return true;
-          }
-
-          return false;
-        },
-      ),
+      onGenerateRoute: RouteController.onGenerateRoute,
     );
   }
 }

@@ -14,7 +14,7 @@ class ActionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Material(
-        color: Theme.of(context).cardColor,
+        color: Theme.of(context).cardColor.withOpacity(0.0),
         child: InkWell(
           onTap: onTap,
           child: Padding(

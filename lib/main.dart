@@ -5,7 +5,7 @@ import 'app.dart';
 import 'bloc/language/language_cubit.dart';
 import 'bloc/theme/theme_cubit.dart';
 import 'config/init.dart';
-import 'services/preferences_service.dart';
+import 'data/services/preferences_service.dart';
 
 void main() async {
   await init();
